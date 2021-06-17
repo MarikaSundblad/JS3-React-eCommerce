@@ -10,7 +10,7 @@ const cartReducer = (state = initState, action) => {
   let itemIndex
   switch(action.type) {
     case actiontypes().cart.add:
-      itemIndex = state.shoppingCart.findIndex(product => product._id === action.payload._id)
+      itemIndex = state.shoppingCart.findIndex(product => product.id === action.payload.id)
       itemIndex < 0
       ? state.shoppingCart = [...state.shoppingCart, {...action.payload, quantity: 1}]
       : state.shoppingCart[itemIndex].quantity += 1
@@ -32,7 +32,7 @@ const cartReducer = (state = initState, action) => {
 
     case actiontypes().cart.sub:
       action.payload.quantity === 1
-      ? state.shoppingCart = state.shoppingCart.filter(product => product._id !== action.payload._id)
+      ? state.shoppingCart = state.shoppingCart.filter(product => product.id !== action.payload.id)
       : action.payload.quantity -= 1
 
       // itemIndex = state.shoppingCart.findIndex(product => product._id === action.payload)
@@ -50,7 +50,7 @@ const cartReducer = (state = initState, action) => {
 
 
     case actiontypes().cart.delete:
-      state.shoppingCart = state.shoppingCart.filter(product => product._id !== action.payload)
+      state.shoppingCart = state.shoppingCart.filter(product => product.id !== action.payload)
       state.totalCartAmount = getTotalAmount(state.shoppingCart)
       state.totalCartQuantity = getTotalQuantity(state.shoppingCart)
       return state;

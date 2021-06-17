@@ -30,7 +30,7 @@ const ProductCard = ({product, details}) => {
             {
               !details && 
               <div className="col">
-                <Link className="btn btn-info btn-block" to={`/products/${product._id}`} >Read more</Link>
+                <Link className="btn btn-info btn-block" to={`/products/${product.id}`} >Read more</Link>
               </div>
             }
 

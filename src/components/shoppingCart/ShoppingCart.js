@@ -28,7 +28,7 @@ const ShoppingCart = () => {
       <div className="dropdown-divider"></div>
 
       <div className="p-2 d-flex justify-content-between align-items-center">
-        <div>
+        <div className="p-2 d-flex justify-content-between align-items-center">
           <div>
             Total Amount: <span>{totalCartAmount}</span>
           </div>
