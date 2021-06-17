@@ -8,7 +8,7 @@ const Navbar = () => {
   const totalQuantity = useSelector(state => state.cartReducer.totalCartQuantity)
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-info">
+    <nav className="navbar navbar-expand-lg navbar-light bg-info bg-white">
       <div className="container-fluid">
         <Link to="/"><img src={Logo} alt="LOGO" /></Link>
         <button
