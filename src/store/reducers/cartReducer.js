@@ -19,35 +19,16 @@ const cartReducer = (state = initState, action) => {
       state.totalCartQuantity = getTotalQuantity(state.shoppingCart)
 
       return state
-      // if(itemIndex < 0) {
-      //   console.log(1)
-      //   return {
-      //    ...state,
-      //    shoppingCart: [...state.shoppingCart, {...action.payload, quantity: 1}]
-      //  }
-      // } else {
-        
-      // }
-      
 
     case actiontypes().cart.sub:
       action.payload.quantity === 1
       ? state.shoppingCart = state.shoppingCart.filter(product => product.id !== action.payload.id)
       : action.payload.quantity -= 1
 
-      // itemIndex = state.shoppingCart.findIndex(product => product._id === action.payload)
-
-      // state.shoppingCart[itemIndex].quantity === 1
-      // ? state.shoppingCart = state.shoppingCart.filter(product => product._id !== action.payload)
-      // : state.shoppingCart[itemIndex].quantity -= 1
-
       state.totalCartAmount = getTotalAmount(state.shoppingCart)
       state.totalCartQuantity = getTotalQuantity(state.shoppingCart)
 
-
       return state
-
-
 
     case actiontypes().cart.delete:
       state.shoppingCart = state.shoppingCart.filter(product => product.id !== action.payload)
@@ -60,7 +41,6 @@ const cartReducer = (state = initState, action) => {
       return state
   }
 }
-
 
 const getTotalQuantity = cart => {
   let total = 0;

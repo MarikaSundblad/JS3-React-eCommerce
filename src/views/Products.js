@@ -7,17 +7,16 @@ const Products = () => {
 
   const dispatch = useDispatch();
   const productCatalog = useSelector(state => state.productCatalog);
-  // const productCatalog = null
 
   useEffect(() => {
     dispatch(getProductCatalog());
   }, [dispatch])
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-4">
+    <div className="row row-cols-1 row-cols-md-3 g-4 d-flex align-items-end">
       {
         productCatalog && productCatalog.map(product => (
-          <ProductCard product={product} key={product._id} />
+          <ProductCard product={product} key={product.id} />
         ))
       }
     </div>

@@ -9,14 +9,14 @@ const ProductCard = ({product, details}) => {
 
   return (
     <div className="col">
-      <div className="card h-100">
-        {details && <h1 className="text-center">{product.name}</h1>}
+      <div className="card">
+        {details && <h1 className="text-center">{product.title}</h1>}
         <img src={product.image} alt="..." className="card-img-top" />
         <div className="card-body">
-          {!details && <h5 className="card-title">{product.name}</h5>}
+          {!details && <h5 className="card-title">{product.title}</h5>}
           <div className="card-text">
             {details 
-              ? <p>{product.desc}</p>
+              ? <p>{product.description}</p>
               : <p>{product.short}</p>
             }
             <p className="h5">Price: <span className="text-danger">{product.price}</span></p>

@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'; 
 import ShoppingCart from '../shoppingCart/ShoppingCart';
 import { useSelector } from 'react-redux';
+import Logo from '../../assets/VUE-store.png';
 
 const Navbar = () => {
 
@@ -9,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-info">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/"><img src="../../assets/VUE-store.png" alt="logo" /></Link>
+        <Link to="/"><img src={Logo} alt="LOGO" /></Link>
         <button
           className="navbar-toggler"
           type="button"
