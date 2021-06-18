@@ -32,6 +32,11 @@
   background-color: #fff;
 }
 
+.greenish-color {
+  background-color: #159d90;
+  color: black;
+}
+
 
 @keyframes App-logo-spin {
   from {

@@ -23,14 +23,14 @@ const ProductCard = ({product, details}) => {
           </div>
           <div className={`row row-cols-1 ${!details && 'row-cols-lg-2'} g-2 mt-3`}>
             <div className="col">
-              <button className="btn btn-info btn-block" onClick={() => {
+              <button className="btn greenish-color btn-block" onClick={() => {
                 dispatch(addToCart(product))
               }}>Add To Cart</button>
             </div>
             {
               !details && 
               <div className="col">
-                <Link className="btn btn-info btn-block" to={`/products/${product.id}`} >Read more</Link>
+                <Link className="btn greenish-color btn-block" to={`/products/${product.id}`} >Read more</Link>
               </div>
             }
 

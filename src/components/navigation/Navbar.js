@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'; 
 import ShoppingCart from '../shoppingCart/ShoppingCart';
 import { useSelector } from 'react-redux';
-import Logo from '../../assets/VUE-store.png';
+import Logo from '../../assets/REACT-store.png';
 
 const Navbar = () => {
 
@@ -29,6 +29,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink exact className="nav-link" aria-current="page" to="/products">Products</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink exact className="nav-link" aria-current="page" to="/login">Login</NavLink>
             </li>
 
             <li className="nav-item me-3 me-lg-0 dropdown">
