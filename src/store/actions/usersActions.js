@@ -4,7 +4,7 @@ import actiontypes from '../actiontypes';
 export const getUsers = () => {
   return dispatch => {
     dispatch(loading())
-    axios.get('http://localhost:3000/users')
+    axios.get('https://fakestoreapi.com/users')
     .then(res => {
       dispatch(success(res.data))
     })
