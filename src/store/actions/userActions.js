@@ -5,7 +5,7 @@ import { getUsers } from './usersActions';
 export const getUser = id => {
   return dispatch => {
     dispatch(loading())
-    axios.get(`http://localhost:3000/users/${id}`)
+    axios.get(`https://fakestoreapi.com/users${id}`)
     .then(res => dispatch(success(res.data)))
     .catch(err => dispatch(failure(err.message)))
   }
@@ -14,7 +14,7 @@ export const getUser = id => {
 export const updateUser = (id, user) => {
   return dispatch => {
     dispatch(loading())
-    axios.patch(`http://localhost:3000/users/${id}`, user)
+    axios.patch(`https://fakestoreapi.com/users${id}`, user)
     .then(() => dispatch(getUsers()))
     .catch(err => dispatch(failure(err.message)))
   }
@@ -23,7 +23,7 @@ export const updateUser = (id, user) => {
 export const deleteUser = id => {
   return dispatch => {
     dispatch(loading())
-    axios.delete(`http://localhost:3000/users/${id}`)
+    axios.delete(`https://fakestoreapi.com/users${id}`)
     .then(() => dispatch(getUsers()))
     .catch(err => dispatch(failure(err.message)))
   }
