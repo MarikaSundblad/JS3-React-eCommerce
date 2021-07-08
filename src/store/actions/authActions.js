@@ -16,7 +16,7 @@ const apiCall = (url, data, dispatch) => {
 export const addUser = (user) => {
   return dispatch => {
     dispatch(loading())
-    axios.post('http://localhost:3000/users', user)
+    axios.post('https://fakestoreapi.com/users', user)
     .then(() => {
       dispatch(getUsers())
     })
@@ -27,14 +27,14 @@ export const addUser = (user) => {
 export const login = user => {
   return dispatch => {
     dispatch(loading())
-    apiCall('http://localhost:3000/login', user, dispatch)
+    apiCall('https://fakestoreapi.com/auth/login', user, dispatch)
   }
 }
 
 export const register = (user) => {
   return dispatch => {
     dispatch(loading())
-    apiCall('http://localhost:3000/register', user, dispatch)
+    apiCall('https://fakestoreapi.com/users', user, dispatch)
   }
 }
 
@@ -48,7 +48,7 @@ export const checkAdmin = token => {
   return dispatch => {
     localStorage.setItem('token', token)
     const id = jwt.decode(token).sub;
-    axios.get(`http://localhost:3000/users/${id}`)
+    axios.get(`https://fakestoreapi.com/users/${id}`)
     .then(res => {
       dispatch(success({token, admin: res.data.admin}))
     })
